@@ -1,0 +1,11 @@
+<h3><%= @word.word() %></h3>
+<% if @word.definition() != [] %>
+  <ul>
+    <% @word.definition().each do |definition| %>
+      <li><%= definition.definition() %></li>
+    <% end %>
+  </ul>
+<% end %>
+<a href="/<%= @word.word() %>/definition/new" id="add_definition"><button type="button">Add a Definition</button></a>
+
+<a href="/" id="back"><button type="button">Back</button></a>

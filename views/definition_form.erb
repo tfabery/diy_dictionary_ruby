@@ -1,0 +1,8 @@
+<form action="/<%= @word.word() %>" method="post">
+  <div class="form-group">
+    <input type="hidden" name="word" value="<%= @word.word() %>">
+    <label for="definition">Enter a Definition for <%= @word.word() %></label>
+    <input type="text" name="definition">
+    <button type="submit" name="add_definition">Add</button>
+  </div>
+</form>
