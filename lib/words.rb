@@ -19,4 +19,14 @@ class Word
   define_singleton_method(:clear) do
     @@words = []
   end
+
+  define_singleton_method(:find) do |word|
+    found_word = nil
+    @@words.each do |val|
+      if val.word() == word
+        found_word = val
+      end
+    end
+    found_word
+  end
 end

@@ -21,4 +21,12 @@ describe('Word') do
       expect(Word.all()).to(eq([test_word]))
     end
   end
+
+  describe('.find') do
+    it "find a word from @@words class variable" do
+      test_word = Word.new('name')
+      test_word.save()
+      expect(Word.find('name')).to(eq(test_word))
+    end
+  end
 end
