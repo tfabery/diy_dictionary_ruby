@@ -1,1 +1,10 @@
-<h3>Words</h3>
+<% if @words != [] %>
+  <h3>Words</h3>
+  <ul>
+    <% @words.each do |word| %>
+    <li><a href="/definition/<%= word.word() %>"><%= word.word() %></a></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<a href="/word/new" id="add_word"><button type="button">Add a Word</button></a>
