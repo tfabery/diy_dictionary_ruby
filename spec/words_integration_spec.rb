@@ -32,6 +32,16 @@ describe('word path', {:type => :feature}) do
     click_link('hi')
     expect(page).to have_content('hi')
   end
+
+  it "go back to landing page" do
+    visit('/')
+    click_link('add_word')
+    fill_in('word', :with => 'what')
+    click_button('Add')
+    click_link('what')
+    click_link('back')
+    expect(page).to have_content('Words')
+  end
 end
 
 describe('definition path', {:type => :feature}) do
