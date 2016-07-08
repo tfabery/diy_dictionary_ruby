@@ -23,4 +23,13 @@ describe('word path', {:type => :feature}) do
     click_button('Add')
     expect(page).to have_content('name')
   end
+
+  it "goto word page" do
+    visit('/')
+    click_link('add_word')
+    fill_in('word', :with => 'hi')
+    click_button('Add')
+    click_link('hi')
+    expect(page).to have_content('hi')
+  end
 end

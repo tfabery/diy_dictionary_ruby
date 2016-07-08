@@ -18,3 +18,8 @@ post('/words') do
   @words = Word.all()
   erb(:index)
 end
+
+get('/:word') do
+  @word = Word.find(params.fetch('word'))
+  erb(:word)
+end
